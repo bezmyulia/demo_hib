@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property nametourr="connection.url">jdbc:postgresql://localhost:5432/demo_hib</property>
+        <property nametourr="connection.driver_class">org.postgresql.Driver</property>
+        <property nametourr="connection.username">postgres</property>
+        <property nametourr="connection.password">postgres</property>
+
+        <!-- DB schema will be updated if needed -->
+        <property nametourr="hibernate.hbm2ddl.auto">update</property>
+        <property nametourr="show_sql">true</property>
+        <property nametourr="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+
+        <!-- Mappings -->
+        <mapping class="org.dstu.domain.Student"/>
+        <mapping class="org.dstu.domain.Teacher"/>
+        <mapping class="org.dstu.domain.Trip" />
+    </session-factory>
+</hibernate-configuration>
