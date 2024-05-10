@@ -4,19 +4,19 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property nametourr="connection.url">jdbc:postgresql://localhost:5432/demo_hib</property>
-        <property nametourr="connection.driver_class">org.postgresql.Driver</property>
-        <property nametourr="connection.username">postgres</property>
-        <property nametourr="connection.password">postgres</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/demo_hib</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
 
         <!-- DB schema will be updated if needed -->
-        <property nametourr="hibernate.hbm2ddl.auto">update</property>
-        <property nametourr="show_sql">true</property>
-        <property nametourr="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
         <!-- Mappings -->
-        <mapping class="org.dstu.domain.Student"/>
-        <mapping class="org.dstu.domain.Teacher"/>
+        <mapping class="org.dstu.domain.Client"/>
+        <mapping class="org.dstu.domain.Sales"/>
         <mapping class="org.dstu.domain.Trip" />
     </session-factory>
 </hibernate-configuration>

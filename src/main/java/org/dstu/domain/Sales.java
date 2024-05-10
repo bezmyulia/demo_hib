@@ -1,108 +1,47 @@
 package org.dstu.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+
+@Table(name="sales")
 public class Sales {
-    private int id;
-    private String lastName;
-    private String firstName;
-    private String middleName;
-    private String nametour;
-    private Integer quantity;
-    private Trip trip;
-    private Client client;
 
-    @Id
-    @GeneratedValue
     @Column(name = "id")
-    public int getId() {
-        return id;
-    }
+    private int id;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    @Column(name = "employeeLast_name")
+    private String employeeLastName;
 
-    @Basic
-    @Column(name = "last_name")
-    public String getLastName() {
-        return lastName;
-    }
+    @Column(name = "employeeFirst_name")
+    private String employeeFirstName;
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    @Column(name = "employeeMiddle_name")
+    private String employeeMiddleName;
 
-    @Basic
-    @Column(name = "first_name")
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    @Basic
-    @Column(name = "middle_name")
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    @Basic
     @Column(name = "nametour")
-    public String getNametour() {
-        return nametour;
-    }
+    private String nametour;
 
-    public void setNametour(String nametour) {
-        this.nametour = nametour;
-    }
-
-    @Basic
     @Column(name = "quantity")
-    public Integer getQuantity() {
-        return quantity;
-    }
+    private Integer quantity;
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "chair_id")
-    public Trip getChair() {
-        return trip;
-    }
+    @ManyToOne
+    @JoinColumn(name = "name_tour") // в этом поле будет храниться внешний ключ
+    private Trip trip;
 
-    public void setChair(Trip trip) {
-        this.trip = trip;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Sales sales = (Sales) o;
-        return id == sales.id && Objects.equals(lastName, sales.lastName) && Objects.equals(firstName, sales.firstName) && Objects.equals(middleName, sales.middleName) && Objects.equals(nametour, sales.nametour) && Objects.equals(quantity, sales.quantity);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, lastName, firstName, middleName, nametour, quantity);
-    }
+    @ManyToOne
+    @JoinColumn(name = "id") // в этом поле будет храниться внешний ключ
+    private Client client;
 }
