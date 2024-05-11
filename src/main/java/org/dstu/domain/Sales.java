@@ -30,12 +30,14 @@ public class Sales {
     @Column(name = "employeeMiddle_name")
     private String employeeMiddleName;
 
-    @Column(name = "nametour")
+    @Column(name = "tour_name")
     private String nametour;
 
     @Column(name = "quantity")
     private Integer quantity;
 
+    @Column(name = "quantity_sales")
+    private Integer quantitysales;
 
     @ManyToOne
     @JoinColumn(name = "name_tour") // в этом поле будет храниться внешний ключ
