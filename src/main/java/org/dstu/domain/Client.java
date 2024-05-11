@@ -3,18 +3,14 @@ package org.dstu.domain;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@Table(name="client", schema = "schema")
+@Table(name = "clients", schema = "schema")
 public class Client {
 
     @Id

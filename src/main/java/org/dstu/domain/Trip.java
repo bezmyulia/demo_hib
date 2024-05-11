@@ -4,19 +4,15 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
 
 
 @Entity
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@Table(name = "trip", schema = "schema")
+@Table(name = "trips", schema = "schema")
 public class Trip {
 
     @Id

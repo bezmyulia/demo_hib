@@ -1,6 +1,7 @@
 package org.dstu.dao;
 
 import org.dstu.domain.Client;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -12,10 +13,9 @@ public class ClientDao extends BaseDaoImpl<Client, Integer> {
     }
 
     public List<Client> getClientsByCity(String clientCity) {
-        String hql = "SELECT c " +
-                "FROM Client c " +
-                "LEFT JOIN c.sales s " +
-                "LEFT JOIN s.trip t " +
+        String hql = "SELECT DISTINCT s.client " +
+                "FROM Sale s " +
+                "JOIN s.trip t " +
                 "WHERE t.city = :cityName";
 
         Query<Client> query = getSession().createQuery(hql, Client.class);
