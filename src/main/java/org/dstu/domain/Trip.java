@@ -1,9 +1,6 @@
 package org.dstu.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,11 +10,12 @@ import java.util.Set;
 
 
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-
+@ToString
 @Table(name = "trip", schema = "schema")
 public class Trip {
 
@@ -41,4 +39,11 @@ public class Trip {
     @Column(name = "price")
     private Integer price;
 
+    public Trip(String nametourr, LocalDate datestart, LocalDate dateend, String city, Integer price) {
+        this.nametourr = nametourr;
+        this.datestart = datestart;
+        this.dateend = dateend;
+        this.city = city;
+        this.price = price;
+    }
 }

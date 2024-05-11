@@ -1,20 +1,18 @@
 package org.dstu.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-
+@ToString
 @Table(name = "sales", schema = "schema")
 public class Sales {
     @Id
@@ -46,4 +44,15 @@ public class Sales {
     @ManyToOne
     @JoinColumn(name = "client_id") // в этом поле будет храниться внешний ключ
     private Client client;
+
+    public Sales(String employeeLastName, String employeeFirstName, String employeeMiddleName, String nametour, Integer quantity, Integer quantitysales, Trip trip, Client client) {
+        this.employeeLastName = employeeLastName;
+        this.employeeFirstName = employeeFirstName;
+        this.employeeMiddleName = employeeMiddleName;
+        this.nametour = nametour;
+        this.quantity = quantity;
+        this.quantitysales = quantitysales;
+        this.trip = trip;
+        this.client = client;
+    }
 }

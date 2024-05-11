@@ -13,35 +13,28 @@ public class Main {
         final Session session = HibernateUtil.getSession();
         ClientDao clientDao = new ClientDao();
 
-        Client client1 = new Client(2, "Михайлов", "Михаил", "Михайлович", 4444, "89995556611", 10);
-//        Client client1 = new Client();
-//        client1.setFirstName("Михаил");
-//        client1.setLastName("Михайлов");
-//        client1.setMiddleName("Михайлович");
-//        client1.setPassport(4444);
-//        client1.setPhone("89995556611");
-//        client1.setDiscount(10);
 
-        Client client2 = new Client(3, "Олегов", "Олег", "Олегович", 5555, "89995556655", 10);
-//        Client client2 = new Client();
-//        client2.setFirstName("Олег");
-//        client2.setLastName("Олегов");
-//        client2.setMiddleName("Олегович");
-//        client2.setPassport(5555);
-//        client2.setPhone("89995556655");
-//        client2.setDiscount(15);
+        Client client1 = new Client("Михайлов", "Михаил", "Михайлович", 4444, "89995556611", 10);
 
-        Integer id1 = clientDao.save(client1);
-        Integer id2 = clientDao.save(client2);
+        Client client2 = new Client("Олегов", "Олег", "Олегович", 5555, "89995556655", 10);
 
-        System.out.println(id1);
-        System.out.println(id2);
+        Client client3 = Client.builder()
+                               .firstName("12")
+                               .lastName("22")
+                               .middleName("33")
+                               .passport(4444)
+                               .phone("22222")
+                               .discount(10)
+                               .build();
+
+        clientDao.save(client1);
+        clientDao.save(client2);
 
 //        List<Client> clientsByCity = clientDao.getClientsByCity("Moscow");
 //        clientsByCity.forEach(client -> System.out.println(client.getId()));
 
         List<Client> clients = clientDao.findAll();
-        clients.forEach(client -> System.out.println(client.getId()));
+        clients.forEach(client -> System.out.println(client.toString() + "\n-----------\n"));
 //        StudentDao studentDao = new StudentDao();
 //
 //        Student student = new Student();

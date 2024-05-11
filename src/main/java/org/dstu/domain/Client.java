@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -38,4 +39,12 @@ public class Client {
     @Column(name = "discount")
     private Integer discount;
 
+    public Client(String lastName, String firstName, String middleName, int passport, String phone, Integer discount) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.passport = passport;
+        this.phone = phone;
+        this.discount = discount;
+    }
 }
