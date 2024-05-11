@@ -1,9 +1,6 @@
 package org.dstu.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;
@@ -15,8 +12,8 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-
-@Table(name="client")
+@ToString
+@Table(name="client", schema = "schema")
 public class Client {
 
     @Id

@@ -15,7 +15,7 @@ import java.util.Objects;
 @Getter
 @Setter
 
-@Table(name="sales")
+@Table(name = "sales", schema = "schema")
 public class Sales {
 
     @Column(name = "id")
