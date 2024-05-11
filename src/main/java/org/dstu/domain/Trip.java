@@ -41,7 +41,7 @@ public class Trip {
     @Column(name = "price")
     private Integer price;
 
-    @OneToMany(mappedBy = "trip")
+    @OneToMany(mappedBy = "id")
     private List<Sales> sales;
 
 }

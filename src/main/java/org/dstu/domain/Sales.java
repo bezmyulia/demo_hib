@@ -40,7 +40,7 @@ public class Sales {
     private Integer quantitysales;
 
     @ManyToOne
-    @JoinColumn(name = "name_tour") // в этом поле будет храниться внешний ключ
+    @JoinColumn(name = "id") // в этом поле будет храниться внешний ключ
     private Trip trip;
 
     @ManyToOne
