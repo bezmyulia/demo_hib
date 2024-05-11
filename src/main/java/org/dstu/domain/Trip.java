@@ -26,7 +26,7 @@ public class Trip {
     private Integer id;
 
 
-    @Column(name = "nametrip")
+    @Column(name = "name_trip")
     private String nametourr;
 
     @Column(name = "start_date")
