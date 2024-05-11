@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
 
     public static void main(final String[] args) {
-        final Session session = HibernateUtil.getSession();
+//        final Session session = HibernateUtil.getSession();
         ClientDao clientDao = new ClientDao();
 
 

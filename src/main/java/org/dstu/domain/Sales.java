@@ -16,19 +16,20 @@ import java.util.Objects;
 @Table(name = "sales", schema = "schema")
 public class Sales {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "employeeLast_name")
+    @Column(name = "employee_last_name")
     private String employeeLastName;
 
-    @Column(name = "employeeFirst_name")
+    @Column(name = "employee_first_name")
     private String employeeFirstName;
 
-    @Column(name = "employeeMiddle_name")
+    @Column(name = "employee_middle_name")
     private String employeeMiddleName;
 
-    @Column(name = "tour_name")
+    @Column(name = "name_tour")
     private String nametour;
 
     @Column(name = "quantity")
