@@ -41,7 +41,4 @@ public class Trip {
     @Column(name = "price")
     private Integer price;
 
-    @OneToMany(mappedBy = "id")
-    private List<Sales> sales;
-
 }

@@ -41,7 +41,4 @@ public class Client {
     @Column(name = "discount")
     private Integer discount;
 
-    @OneToMany(mappedBy = "id")
-    private List<Sales> sales ;
-
 }
