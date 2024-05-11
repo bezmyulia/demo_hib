@@ -17,7 +17,7 @@ import java.util.Objects;
 
 @Table(name = "sales", schema = "schema")
 public class Sales {
-
+    @Id
     @Column(name = "id")
     private int id;
 
@@ -40,10 +40,10 @@ public class Sales {
     private Integer quantitysales;
 
     @ManyToOne
-    @JoinColumn(name = "id") // в этом поле будет храниться внешний ключ
+    @JoinColumn(name = "trip_id") // в этом поле будет храниться внешний ключ
     private Trip trip;
 
     @ManyToOne
-    @JoinColumn(name = "id") // в этом поле будет храниться внешний ключ
+    @JoinColumn(name = "client_id") // в этом поле будет храниться внешний ключ
     private Client client;
 }
