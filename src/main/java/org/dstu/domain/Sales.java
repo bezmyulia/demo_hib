@@ -13,9 +13,9 @@ import java.time.LocalDate;
 @Setter
 @ToString
 @Table(name = "sales", schema = "schema")
-public class Sale {
+public class Sales {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -48,7 +48,7 @@ public class Sale {
     @JoinColumn(name = "client_id") // в этом поле будет храниться внешний ключ
     private Client client;
 
-    public Sale(String employeeLastName, String employeeFirstName, String employeeMiddleName, String nametour, Integer quantity, Integer quantitysales, LocalDate dateOfSale, Trip trip, Client client) {
+    public Sales(String employeeLastName, String employeeFirstName, String employeeMiddleName, String nametour, Integer quantity, Integer quantitysales, LocalDate dateOfSale, Trip trip, Client client) {
         this.employeeLastName = employeeLastName;
         this.employeeFirstName = employeeFirstName;
         this.employeeMiddleName = employeeMiddleName;

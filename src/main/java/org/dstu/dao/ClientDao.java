@@ -14,7 +14,7 @@ public class ClientDao extends BaseDaoImpl<Client, Integer> {
 
     public List<Client> getClientsByCity(String clientCity) {
         String hql = "SELECT DISTINCT s.client " +
-                "FROM Sale s " +
+                "FROM Sales s " +
                 "JOIN s.trip t " +
                 "WHERE t.city = :cityName";
 

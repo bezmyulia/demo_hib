@@ -1,9 +1,9 @@
 package org.dstu.dao;
 
-import org.dstu.domain.Sale;
+import org.dstu.domain.Sales;
 
-public class SalesDao extends BaseDaoImpl <Sale, Integer> {
+public class SalesDao extends BaseDaoImpl <Sales, Integer> {
     public SalesDao() {
-        super(Sale.class);
+        super(Sales.class);
     }
 }
